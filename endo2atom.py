@@ -21,9 +21,12 @@ from dateutil.tz import *
 from datetime import *
 import bottle
 
+@bottle.route('/')
+def index():
+return "Please append your numerical Endomondo user id to this URL to get an ATOM feed of your activity. Or run your own copy of the code which you can get at https://github.com/conoro/endo2atom"
 
 @bottle.route('/:user_id')
-def index(user_id='8922951'):
+def userfeed(user_id='8922951'):
 
     feed = []
  

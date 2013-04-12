@@ -1,6 +1,6 @@
 Endo2Atom
 -------------------
-Generate an ATOM feed from your recent Endomondo activity for re-use elsewhere 
+Generate an ATOM feed from your recent Endomondo activity for re-use elsewhere. Access at http://endo2atom.conoroneill.com/ 
 
 Description
 -----------
@@ -11,8 +11,8 @@ More details over on http://conoroneill.net/
 Usage
 ------------------------
 * Go to your Endomondo Profile which will have a URL like http://www.endomondo.com/profile/8922951
-* Grab that trailing ID and use it on the example of this code that I have running on heroku e.g.: http://blahblhblah.heroku.com/8922951
-* That gives you ATOm output so just use that URL on IFTTT etc
+* Grab that trailing ID and use it on the example of this code that I have running on heroku e.g.: http://endo2atom.conoroneill.com/8922951 or http://ancient-spire-5019.herokuapp.com/8922951
+* That gives you ATOM output so just use that URL on IFTTT etc
 * Let me know if you have any problems. I have only tested it on my own Endomondo account
 
     
