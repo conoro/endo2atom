@@ -38,7 +38,7 @@ def userfeed(user_id='8922951'):
         souptable = soup.find("table")
 
         souprows = souptable.findAll('tr')
-        for row in souprows[1:]:
+        for i, row in souprows[1:]:
             item = {}
 
             col = row.findAll('td')
@@ -51,9 +51,9 @@ def userfeed(user_id='8922951'):
             item["title"] = activity_sport
             item["url"] = activity_link
             item["body"] = "My latest activity was " + activity_sport + " and I did " + activity_distance + " in " + activity_duration
-            item["date_published"] = parse(activity_date)
-            item["date_updated"] = parse(activity_date)
-            item["atom_id"] = "http://www.endo2rss.com/" + user_id + "/"
+            item["date_published"] = parse(activity_date).isoformat("T") + "Z"
+            item["date_updated"] = parse(activity_date).isoformat("T") + "Z"
+            item["atom_id"] = "http://endo2atom.conoroneill.com/" + user_id + "/" + str(i)
 
             # Add item to feed
             feed.append(item)
@@ -62,8 +62,8 @@ def userfeed(user_id='8922951'):
         return bottle.template('endo2atom', 
             author = "Endomondo",
             title="Your Endomondo Activity Feed",
-            site_url = "http:/www.endomondo.com/",
-            feed_url = "http://www.endomondo.com/embed/user/workouts?id="+str(user_id),
+            site_url = "http://www.endomondo.com/",
+            feed_url = "http://endo2atom.conoroneill.com/"+str(user_id),
             date_updated = datetime.now(),
             entries = feed
             )
