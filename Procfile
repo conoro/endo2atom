@@ -1,1 +1,1 @@
-web: gunicorn -w 1 endo2atom:app
+web: gunicorn -w 4 -b 0.0.0.0:$PORT -k gevent endo2atom:app
