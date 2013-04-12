@@ -38,7 +38,7 @@ def userfeed(user_id='8922951'):
         souptable = soup.find("table")
 
         souprows = souptable.findAll('tr')
-        for i, row in souprows[1:]:
+        for i, row in enumerate(souprows[1:]):
             item = {}
 
             col = row.findAll('td')
@@ -64,7 +64,7 @@ def userfeed(user_id='8922951'):
             title="Your Endomondo Activity Feed",
             site_url = "http://www.endomondo.com/",
             feed_url = "http://endo2atom.conoroneill.com/"+str(user_id),
-            date_updated = datetime.now(),
+            date_updated = datetime.now().isoformat("T") + "Z",
             entries = feed
             )
     except:
