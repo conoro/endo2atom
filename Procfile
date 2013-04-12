@@ -1,1 +1,1 @@
-web: python endo2atom.py
+web: gunicorn -w 1 endo2atom:app

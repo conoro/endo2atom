@@ -19,7 +19,6 @@ import time
 from dateutil.parser import *
 from dateutil.tz import *
 from datetime import *
-import gevent.monkey; gevent.monkey.patch_all()
 from bottle import route, run, template
 
 
@@ -68,4 +67,8 @@ def index(user_id='8922951'):
     except:
         pass
 
-run(server='gevent', port=os.environ.get('PORT', 5000))
+if __name__ == "__main__":
+    run(host='localhost', port=8080)
+
+app = bottle.default_app()
+
