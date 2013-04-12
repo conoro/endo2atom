@@ -1,1 +1,1 @@
-web: app.py
+web: endo2atom.py
