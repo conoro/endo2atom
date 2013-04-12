@@ -19,10 +19,10 @@ import time
 from dateutil.parser import *
 from dateutil.tz import *
 from datetime import *
-from bottle import route, run, template
+import bottle
 
 
-@route('/:user_id')
+@bottle.route('/:user_id')
 def index(user_id='8922951'):
 
     feed = []
@@ -56,7 +56,7 @@ def index(user_id='8922951'):
             feed.append(item)
 
         #Bottle
-        return template('endo2atom', 
+        return bottle.template('endo2atom', 
             author = "Endomondo",
             title="Your Endomondo Activity Feed",
             site_url = "http:/www.endomondo.com/",
@@ -68,7 +68,7 @@ def index(user_id='8922951'):
         pass
 
 if __name__ == "__main__":
-    run(host='localhost', port=8080)
+    bottle.run(host='localhost', port=8080)
 
 app = bottle.default_app()
 
