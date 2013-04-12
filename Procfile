@@ -1,1 +1,1 @@
-web: endo2atom.py
+web: python endo2atom.py
