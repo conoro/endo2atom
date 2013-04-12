@@ -23,7 +23,7 @@ import bottle
 
 @bottle.route('/')
 def index():
-return "Please append your numerical Endomondo user id to this URL to get an ATOM feed of your activity. Or run your own copy of the code which you can get at https://github.com/conoro/endo2atom"
+    return bottle.template('index')
 
 @bottle.route('/:user_id')
 def userfeed(user_id='8922951'):
