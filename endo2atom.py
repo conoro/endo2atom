@@ -43,6 +43,7 @@ def userfeed(user_id='8922951'):
 
             col = row.findAll('td')
             activity_date = col[0].string.strip()
+            activity_date = parse(activity_date).isoformat("T") + "Z"
             activity_date = activity_date.replace(hour=datetime.now().hour, minute=datetime.now().minute, second=datetime.now().second)
             activity_link = "http://www.endomondo.com/" + row.findAll('a')[0]['href'].lstrip('../../')
             activity_sport = col[1].string.strip()
@@ -52,8 +53,8 @@ def userfeed(user_id='8922951'):
             item["title"] = activity_sport
             item["url"] = activity_link
             item["body"] = "My latest activity was " + activity_sport + " and I did " + activity_distance + " in " + activity_duration
-            item["date_published"] = parse(activity_date).isoformat("T") + "Z"
-            item["date_updated"] = parse(activity_date).isoformat("T") + "Z"
+            item["date_published"] = activity_date
+            item["date_updated"] = activity_date
             item["atom_id"] = "http://endo2atom.conoroneill.com/" + user_id + "/" + str(i)
 
             # Add item to feed
