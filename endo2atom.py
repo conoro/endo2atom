@@ -43,6 +43,7 @@ def userfeed(user_id='8922951'):
 
             col = row.findAll('td')
             activity_date = col[0].string.strip()
+            activity_date = activity_date.replace(hour=datetime.now().hour, minute=datetime.now().minute, second=datetime.now().second)
             activity_link = "http://www.endomondo.com/" + row.findAll('a')[0]['href'].lstrip('../../')
             activity_sport = col[1].string.strip()
             activity_distance = col[2].string.strip()
