@@ -10,7 +10,7 @@
     <entry>
         <title>{{entry['title']}}</title>
         <link rel="alternate" type="text/html" href="{{entry['url']}}" />
-        <id>{{entry['atom_id']}}</id>
+        <id>{{entry['url']}}</id>
         <published>{{entry['date_published']}}</published>
         <updated>{{entry['date_updated']}}</updated>
         <author>
