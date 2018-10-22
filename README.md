@@ -1,6 +1,11 @@
-Endo2Atom
+DEPRECATED - Endo2Atom
 -------------------
-Generate an ATOM feed from your recent Endomondo activity for re-use elsewhere. Access at http://endo2atom.conoroneill.com/ 
+Oct 22nd 2018 - It appears that Endomondo no longer supports this functionality. Please do not use this tool.
+
+## Intro
+Generate an ATOM feed from your recent Endomondo activity for re-use elsewhere.
+
+
 
 Description
 -----------
